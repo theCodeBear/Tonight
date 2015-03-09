@@ -1,0 +1,13 @@
+<h1> {{ intro }} </h1>
+
+<br><br>
+
+Create User
+<form>
+  <input type='text' name='name' placeholder='name' ng-model='name'><br>
+  <button ng-click='createUser()'>Create User</button>
+</form>
+
+<div ng-repeat='user in users'>
+  {{ user.name }}
+</div>
