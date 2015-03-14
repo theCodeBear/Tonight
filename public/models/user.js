@@ -1,4 +1,4 @@
-angular.module('prototype')
+angular.module('tonight')
 
 .factory('User', ['$http', function($http) {
 

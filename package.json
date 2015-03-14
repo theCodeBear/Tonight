@@ -1,11 +1,11 @@
 {
-  "name": "Hapi-Mongo-Angular-Prototype",
+  "name": "Tonight",
   "version": "1.0.0",
-  "description": "A prototype for Hapi.js, MongoDB(Mongoose), and AngularJS",
+  "description": "Simplest dating app for finding a date tonight.",
   "main": "index.js",
   "scripts": {
     "test": "start",
-    "dev": "MONGO_URL=mongodb://localhost/hapi-mongo-angular PORT=3001 nodemon server/index.js"
+    "dev": "MONGO_URL=mongodb://localhost/tonight PORT=3001 nodemon server/index.js"
   },
   "keywords": [
     "hapi",

@@ -1,4 +1,4 @@
-angular.module('prototype', ['ui.router'])
+angular.module('tonight', ['ui.router'])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
