@@ -1,11 +1,19 @@
 angular.module('tonight')
 
-.controller('homeCtrl', ['$scope', 'User', '$auth', function($scope, User, $auth) {
+.controller('LoginCtrl', ['$scope', 'User', '$auth', '$state', function($scope, User, $auth, $state) {
 
   $scope.intro = "Tonight";
 
   $scope.authenticate = function(provider) {
     $auth.authenticate(provider);
+  };
+
+  $scope.fakeSignup = function() {
+    $state.go('register');
+  };
+
+  $scope.fakeLogin = function() {
+    $state.go('home.search');
   };
 
   // $scope.createUser = function() {

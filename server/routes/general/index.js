@@ -1,7 +1,7 @@
-'use strict';
+// 'use strict';
 
-module.exports = {
-  handler: function(request, reply) {
-    reply.view('general/index');
-  }
-};
+// module.exports = {
+//   handler: function(request, reply) {
+//     reply.view('general/index');
+//   }
+// };
