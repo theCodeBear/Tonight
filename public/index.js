@@ -9,21 +9,21 @@ angular.module('tonight', ['ui.router'])
   // Login page
   .state('login', {
     url: '/login',
-    templateUrl: 'login/login.html',
+    templateUrl: 'views/login/login.html',
     controller: 'LoginCtrl'
   })
 
   // Registration page
   .state('register', {
     url: '/register',
-    templateUrl: 'register/register.html',
+    templateUrl: 'views/register/register.html',
     controller: 'RegisterCtrl'
   })
 
   // abstract page for all the pages once logged in
   .state('home', {
     url: '',
-    templateUrl: 'home/home.html',
+    templateUrl: 'views/home/home.html',
     abstract: true
   })
 
@@ -32,11 +32,11 @@ angular.module('tonight', ['ui.router'])
     url: '/',
     views: {
       'main': {
-        templateUrl: 'search/search.html',
+        templateUrl: 'views/search/search.html',
         controller: 'SearchCtrl'
       },
       'sidebar': {
-        templateUrl: 'matches/matches.html',
+        templateUrl: 'views/matches/matches.html',
         controller: 'MatchesCtrl'
       }
     }
