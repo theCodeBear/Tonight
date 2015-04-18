@@ -9,8 +9,46 @@
 </head>
 <body ng-app='tonight'>
 
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Tonight</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <form class="navbar-form navbar-right" ng-hide='email'>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Email">
+            <input type='password' class='form-control' placeholder='Password'>
+          </div>
+          <button type="submit" class="btn btn-default">Login</button>
+        </form>
+        <li ng-show='email'><a href="#">Feed</a></li>
+        <li ng-show='email'><a href="#">My Date</a></li>
+        <li ng-show='email'><a href="#">Profile</a></li>
+        <li class="dropdown" ng-show='email'>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class='glyphicon glyphicon-chevron-down'></i></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Premium</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
   <div class='container-fluid'>
-    <h1> Tonight </h1>
 
     <div ui-view></div>
 
@@ -19,11 +57,13 @@
 
   
   <script src='bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
+  <script src='bower_components/jquery/dist/jquery.min.js'></script>
+  <script src='bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
   <script src='index.js'></script>
-  <script src='login/loginCtrl.js'></script>
-  <script src='register/registerCtrl.js'></script>
-  <script src='matches/matchesCtrl.js'></script>
-  <script src='search/searchCtrl.js'></script>
+  <script src='login/loginController.js'></script>
+  <script src='register/registerController.js'></script>
+  <script src='matches/matchesController.js'></script>
+  <script src='search/searchController.js'></script>
   <script src='models/user.js'></script>
 </body>
 </html>
