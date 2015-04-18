@@ -17,18 +17,22 @@ var userSchema = mongoose.Schema({
 
 
 userSchema.statics.register = function(payload, cb) {
+  console.log('server model register payload:', payload);
   User.findOne({ email: payload.email }, function(err, user) {
     if (user) { return cb(true); }
     user = new User(payload);
     user.password = bcrypt.hashSync(payload.password, 8);
-    user.save(cb);
+    user.save(cb(false, user));
   });
 };
 
 userSchema.statics.login = function(payload, cb) {
+  console.log('server user model payload:', payload);
   User.findOne({ email: payload.email }, function(err, user) {
-    if (err) { return cb(true); }
-    var isGood = bcrypt.compareSynce(payload.password, user.password);
+    console.log('err:', err);
+    console.log('user:', user);
+    if (!user) { return cb(true); }
+    var isGood = bcrypt.compareSync(payload.password, user.password);
     if (!isGood) { return cb(true); }
     cb(null, user);
   });

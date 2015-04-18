@@ -1,7 +1,23 @@
+body {
+  background-color: black;
+}
+
 body * {
   /*border: 1px solid red;*/
 }
 
-li {
-  display: inline;
+form[name='registration'] {
+  background-color: rgba(200,200,200,0.9);
+  border-radius: 5px;
+  padding: 5em;
+  margin-top: 3em;
+}
+
+form[name='registration'] .form-control {
+  margin-top: 1em;
+  padding: 1em;
+}
+
+.navbar {
+  border-radius: 0;
 }

@@ -6,6 +6,10 @@ angular.module('tonight')
     return $http.post('/users', user);
   }
 
-  return {create: create};
+  function login(user) {
+    return $http.post('/login', user);
+  }
+
+  return { create: create, login: login };
 
 }]);

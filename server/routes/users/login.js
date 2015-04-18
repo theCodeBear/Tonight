@@ -9,14 +9,15 @@ module.exports = {
   },
   validate: {
     payload: {
-      email: Joi.string().email().required(),
-      password: Joi.string().min(3).required()
+      email: Joi.string().email(),
+      password: Joi.string().min(3)
     }
   },
   handler: function(request, reply) {
+    console.log('payload:',request.payload);
     User.login(request.payload, function(err, user) {
       if (err) {
-        reply().code(500);
+        reply({user: false});
       } else {
         request.auth.session.set(user);
         reply({user: user}).code(200);

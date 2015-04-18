@@ -6,6 +6,12 @@ angular.module('tonight', ['ui.router'])
 
   $stateProvider
 
+  // Entry page
+  .state('landing', {
+    url: '/',
+    templateUrl: 'views/landing/landing.html'
+  })
+
   // Login page
   .state('login', {
     url: '/login',
@@ -22,7 +28,7 @@ angular.module('tonight', ['ui.router'])
 
   // abstract page for all the pages once logged in
   .state('home', {
-    url: '',
+    url: '/home',
     templateUrl: 'views/home/home.html',
     abstract: true
   })

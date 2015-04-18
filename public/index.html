@@ -9,7 +9,7 @@
 </head>
 <body ng-app='tonight'>
 
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default" ng-controller='navbarCtrl' ng-cloak>
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -25,12 +25,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <form class="navbar-form navbar-right" ng-hide='email'>
+        <form class="navbar-form navbar-right" ng-hide='pendingAccount || user'>
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Email">
-            <input type='password' class='form-control' placeholder='Password'>
+            <input type="text" class="form-control" ng-model='login.email' placeholder="Email">
+            <input type='password' class='form-control' ng-model='login.password' placeholder='Password'>
           </div>
-          <button type="submit" class="btn btn-default">Login</button>
+          <button type="submit" login-direct class="btn btn-default">Login</button>
         </form>
         <li ng-show='email'><a href="#">Feed</a></li>
         <li ng-show='email'><a href="#">My Date</a></li>
@@ -48,9 +48,9 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-  <div class='container-fluid'>
+  <div id='uiViewContainer' class='container-fluid'>
 
-    <div ui-view></div>
+    <div id='uiView' ui-view></div>
 
   </div>
 
@@ -60,10 +60,12 @@
   <script src='bower_components/jquery/dist/jquery.min.js'></script>
   <script src='bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
   <script src='index.js'></script>
+  <script src='views/navbar/navbarController.js'></script>
   <script src='views/login/loginController.js'></script>
   <script src='views/register/registerController.js'></script>
   <script src='views/matches/matchesController.js'></script>
   <script src='views/search/searchController.js'></script>
   <script src='models/user.js'></script>
+  <script src='directives/loginDirective.js'></script>
 </body>
 </html>
