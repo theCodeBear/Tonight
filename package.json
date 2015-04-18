@@ -15,10 +15,13 @@
   "author": "Todd Kronenberg <toddkronenberg@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^0.8.2",
     "ejs": "^2.3.1",
     "good": "^5.1.2",
     "good-console": "^4.1.0",
     "hapi": "^8.2.0",
+    "hapi-auth-cookie": "^2.0.0",
+    "joi": "^6.2.0",
     "mongoose": "^3.8.24"
   }
 }
