@@ -1,6 +1,6 @@
-angular.module('tonight', ['ui.router', 'satellizer'])
+angular.module('tonight', ['ui.router'])
 
-.config(['$stateProvider', '$urlRouterProvider', '$authProvider', function($stateProvider, $urlRouterProvider, $authProvider) {
+.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/');
 
@@ -116,7 +116,5 @@ angular.module('tonight', ['ui.router', 'satellizer'])
   //     }
   //   }
   // })
-
-  $authProvider.facebook({ clientId: '1383074228679190' });
 
 }]);
