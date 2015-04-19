@@ -19,7 +19,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Tonight</a>
+      <a class="navbar-brand" ui-sref='landing'>Tonight</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -32,15 +32,15 @@
           </div>
           <button type="submit" login-direct class="btn btn-default">Login</button>
         </form>
-        <li ng-show='email'><a href="#">Feed</a></li>
-        <li ng-show='email'><a href="#">My Date</a></li>
-        <li ng-show='email'><a href="#">Profile</a></li>
-        <li class="dropdown" ng-show='email'>
+        <li ng-show='user'><a ui-sref='dashboard.feed'>Feed</a></li>
+        <li ng-show='user'><a ui-sref='dashboard.myDate'>My Date</a></li>
+        <li ng-show='user'><a ui-sref='dashboard.profile'>Profile</a></li>
+        <li class="dropdown" ng-show='user'>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class='glyphicon glyphicon-chevron-down'></i></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Account</a></li>
-            <li><a href="#">Premium</a></li>
+            <li><a ui-sref='dashboard.faq'>FAQ</a></li>
+            <li><a ui-sref='dashboard.account'>Account</a></li>
+            <li><a ui-sref='dashboard.premium'>Premium</a></li>
           </ul>
         </li>
       </ul>
@@ -61,10 +61,13 @@
   <script src='bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
   <script src='index.js'></script>
   <script src='views/navbar/navbarController.js'></script>
-  <script src='views/login/loginController.js'></script>
   <script src='views/register/registerController.js'></script>
+  <script src='views/premium/premiumController.js'></script>
+  <script src='views/dateStory/myDateController.js'></script>
+  <script src='views/account/accountController.js'></script>
+  <script src='views/profile/profileController.js'></script>
   <script src='views/matches/matchesController.js'></script>
-  <script src='views/search/searchController.js'></script>
+  <script src='views/feed/feedController.js'></script>
   <script src='models/user.js'></script>
   <script src='directives/loginDirective.js'></script>
 </body>

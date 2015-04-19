@@ -21,3 +21,16 @@ form[name='registration'] .form-control {
 .navbar {
   border-radius: 0;
 }
+
+.navbar li {
+  margin: 0 2em 0 2em;
+}
+
+.landingPage {
+  color: white;
+}
+
+.dropdown-menu li {
+  margin: 0;
+  text-align: center;
+}

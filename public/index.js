@@ -12,13 +12,6 @@ angular.module('tonight', ['ui.router'])
     templateUrl: 'views/landing/landing.html'
   })
 
-  // Login page
-  .state('login', {
-    url: '/login',
-    templateUrl: 'views/login/login.html',
-    controller: 'LoginCtrl'
-  })
-
   // Registration page
   .state('register', {
     url: '/register',
@@ -27,19 +20,19 @@ angular.module('tonight', ['ui.router'])
   })
 
   // abstract page for all the pages once logged in
-  .state('home', {
+  .state('dashboard', {
     url: '/home',
     templateUrl: 'views/home/home.html',
     abstract: true
   })
 
   // Main/Search page of website
-  .state('home.search', {
+  .state('dashboard.feed', {
     url: '/',
     views: {
       'main': {
-        templateUrl: 'views/search/search.html',
-        controller: 'SearchCtrl'
+        templateUrl: 'views/feed/feed.html',
+        controller: 'FeedCtrl'
       },
       'sidebar': {
         templateUrl: 'views/matches/matches.html',
@@ -48,35 +41,63 @@ angular.module('tonight', ['ui.router'])
     }
   })
 
-  // // FAQ page
-  // .state('dating.faq', {
-  //   url: '/faq',
-  //   views: {
-  //     'main': {
-  //       templateUrl: 'templates/dating/faq.html',
-  //       controller: 'FaqCtrl'
-  //     },
-  //     'sidebar': {
-  //       templateUrl: 'templates/dating/matches.html',
-  //       controller: 'MatchesCtrl'
-  //     }
-  //   }
-  // })
+  // FAQ page
+  .state('dashboard.faq', {
+    url: '/faq',
+    views: {
+      'main': {
+        templateUrl: 'views/faq/faq.html'//,
+        // controller: 'FaqCtrl'
+      },
+      'sidebar': {
+        templateUrl: 'views/matches/matches.html',
+        controller: 'MatchesCtrl'
+      }
+    }
+  })
 
-  // // account page of the current user
-  // .state('dating.account', {
-  //   url: '/account',
-  //   views: {
-  //     'main': {
-  //       templateUrl: 'templates/dating/account.html',
-  //       controller: 'AccountCtrl'
-  //     },
-  //     'sidebar': {
-  //       templateUrl: 'templates/dating/matches.html',
-  //       controller: 'MatchesCtrl'
-  //     }
-  //   }
-  // })
+  // account page of the current user
+  .state('dashboard.account', {
+    url: '/account',
+    views: {
+      'main': {
+        templateUrl: 'views/account/account.html',
+        controller: 'AccountCtrl'
+      },
+      'sidebar': {
+        templateUrl: 'views/matches/matches.html',
+        controller: 'MatchesCtrl'
+      }
+    }
+  })
+
+  .state('dashboard.premium', {
+    url: '/premium',
+    views: {
+      'main': {
+        templateUrl: 'views/premium/premium.html',
+        controller: 'PremiumCtrl'
+      },
+      'sidebar': {
+        templateUrl: 'views/matches/matches.html',
+        controller: 'MatchesCtrl'
+      }
+    }
+  })
+
+  .state('dashboard.profile', {
+    url: '/profile',
+    views: {
+      'main': {
+        templateUrl: 'views/profile/profile.html',
+        controller: 'ProfileCtrl'
+      },
+      'sidebar': {
+        templateUrl: 'views/matches/matches.html',
+        controller: 'MatchesCtrl'
+      }
+    }
+  })
 
   // // individuals user pages
   // .state('dating.showUser', {
@@ -93,20 +114,20 @@ angular.module('tonight', ['ui.router'])
   //   }
   // })
 
-  // // your current date you propose
-  // .state('dating.date', {
-  //   url: '/date',
-  //   view: {
-  //     'main': {
-  //       templateUrl: 'templates/users/date.html',
-  //       controller: 'DateCtrl'
-  //     },
-  //     'sidebar': {
-  //       templateUrl: 'templates/dating/matches.html',
-  //       controller: 'MatchesCtrl'
-  //     }
-  //   }
-  // })
+  // your current date you propose
+  .state('dashboard.myDate', {
+    url: '/myDate',
+    views: {
+      'main': {
+        templateUrl: 'views/dateStory/myDate.html',
+        controller: 'MyDateCtrl'
+      },
+      'sidebar': {
+        templateUrl: 'views/matches/matches.html',
+        controller: 'MatchesCtrl'
+      }
+    }
+  })
 
   // // Date page for other users
   // .state('dating.userDate', {
