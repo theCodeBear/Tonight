@@ -13,7 +13,7 @@ module.exports = {
   //     email: Joi.string().email(),
   //     password: Joi.string().min(3),
   //     bio: Joi.string().required(),
-  //     picture: Joi.string().uri(),
+  //     pictureCenter: Joi.string().uri(),
   //     interests: Joi.string().required(),
   //     phone: Joi.string().length(10)
   //   }

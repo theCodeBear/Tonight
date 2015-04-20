@@ -30,7 +30,7 @@
             <input type="text" class="form-control" ng-model='login.email' placeholder="Email">
             <input type='password' class='form-control' ng-model='login.password' placeholder='Password'>
           </div>
-          <button type="submit" login-direct class="btn btn-default">Login</button>
+          <button type="submit" login-direct ng-click='loginClick()' class="btn btn-default">Login</button>
         </form>
         <li ng-show='user'><a ui-sref='dashboard.feed'>Feed</a></li>
         <li ng-show='user'><a ui-sref='dashboard.myDate'>My Date</a></li>
@@ -48,7 +48,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-  <div id='uiViewContainer' class='container-fluid'>
+  <div class='container-fluid'>
 
     <div id='uiView' ui-view></div>
 

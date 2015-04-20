@@ -1,5 +1,6 @@
 body {
   background-color: black;
+  overflow:;
 }
 
 body * {
@@ -18,19 +19,148 @@ form[name='registration'] .form-control {
   padding: 1em;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .navbar {
   border-radius: 0;
+  margin-bottom: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 }
 
 .navbar li {
   margin: 0 2em 0 2em;
 }
 
-.landingPage {
+#landingPage {
   color: white;
+  margin-top: 70px;
+}
+
+#registerPage {
+  margin-top: 50px;
 }
 
 .dropdown-menu li {
   margin: 0;
   text-align: center;
 }
+
+.modal-title {
+  color: black;
+  text-align: center;
+}
+
+/* profile.html && other users' profiles */
+.pictureRow1 {
+  text-align: center;
+}
+
+.pictureRow {
+  display: inline-block;
+}
+
+img.profilePic{
+  filter: grayscale(0.5);
+  -webkit-filter: grayscale(0.5);
+  border-radius: 50%;
+}
+
+.profilePic {
+  margin: 0 auto;
+  margin-top: 42px;
+  text-align: center;
+  cursor: pointer;
+  max-width: 273px;
+  max-height: 243px;
+  min-width: 273px;
+  min-height: 243px;
+}
+
+img.profilePic:hover {
+  filter: grayscale(0);
+  -webkit-filter: grayscale(0);
+}
+
+.emptyFrame {
+  font-size: 2em;
+  text-align: center;
+  background-color: #555;
+  color: white;
+  padding-top: 2em;
+  border-right: 1px solid black;
+}
+
+.plusSign {
+  font-size: 2em;
+}
+
+.profileName {
+  text-align: center;
+}
+
+.profileBio {
+  background-color: #444;
+  padding: 2em;
+  font-size: 1.3em;
+}
+
+.profileInterests {
+  font-size: 1.3em;
+  background-color: #444;
+  padding: 2em;
+}
+
+.profileInterests li {
+  font-size: 0.8em;
+}
+
+.profileDateStory {
+  font-size: 3em;
+  padding: 2em;
+}
+
+#editProfile {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: orange;
+  font-size: 2em;
+  position: absolute;
+  outline: none;
+  margin-top: 1em;
+  z-index: 5;
+}
+
+#editProfile:focus {
+  color: white;
+}
+/* end of profile.html and other users' profiles */
+
+#uiView {
+  color: white;
+  /*top: 50px;*/
+  /*position: absolute;*/
+}
+
+/* home.html */
+.home-row {
+  height: 800px;
+}
+
+.home-left {
+  height: 100%;
+  border-right: 3px solid white;
+  overflow: scroll;
+  top: 50px;
+}
+
+.home-right {
+  height: 100%;
+  overflow: scroll;
+  top: 50px;
+}
+/*  end of home.html */

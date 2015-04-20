@@ -10,7 +10,7 @@ angular.module('tonight')
     console.log($scope.register);
     User.create($scope.register).then(function(data) {
       console.log('user added to db i hope:', data.data);
-      $state.go('home.search');
+      $state.go('dashboard.feed');
     });
   };
 

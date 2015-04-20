@@ -1,1 +1,71 @@
-<h1> Your profile </h1>
+<button class='btn' id='editProfile'><i class='glyphicon glyphicon-pencil'></i></button>
+
+<!-- picture row -->
+<div class='pictureRow1'>
+<div class='row pictureRow'>
+<!-- left picture -->
+  <img class='profilePic col-md-4' ng-click='changePicture("Left")' ng-src='{{user.pictureLeft}}' alt='Profile Photo' ng-show='user.pictureLeft'>
+  <div class='profilePic outline col-md-4 emptyFrame' ng-click='changePicture("Left")' ng-hide='user.pictureLeft'>
+    Add picture<br><span class='plusSign'>+</span>
+  </div>
+<!-- center picture -->
+  <img class='profilePic col-md-4' ng-click='changePicture("Center")' ng-src='{{user.pictureCenter}}' alt='Profile Photo' ng-show='user.pictureCenter'>
+  <div class='profilePic outline col-md-4 emptyFrame' ng-click='changePicture("Center")' ng-hide='user.pictureCenter'>
+    Add picture<br><span class='plusSign'>+</span>
+  </div>
+<!-- right picture -->
+  <img class='profilePic col-md-4' ng-click='changePicture("Right")' ng-src='{{user.pictureRight}}' alt='Profile Photo' ng-show='user.pictureRight'>
+  <div class='profilePic outline col-md-4 emptyFrame' ng-click='changePicture("Right")' ng-hide='user.pictureRight'>
+    Add picture<br><span class='plusSign'>+</span>
+  </div>
+</div>
+</div>
+
+
+  <h1 class='profileName'> {{ user.name }} </h1>
+
+<div class='row'>
+  <div class='col-md-8 col-md-offset-2'>
+    <p class='profileBio'> {{ user.bio }} </p>
+  </div>
+</div>
+
+<div class='row'>
+  <div class='col-md-8 col-md-offset-2'>
+    <ul class='profileInterests'>
+      Interests/Hobbies:
+      <li ng-repeat='interest in user.interests'>{{interest}}</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class='profileDateStory'>
+  <div class='text-center' ng-show='user.dateStory'>
+    <a ui-sref='dashboard.myDate'>Click to see it!</a>
+  </div>
+  <div class='text-center' ng-hide='user.dateStory'>
+    No current date story posted
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id='addPictureModal'>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Add Picture URL</h4>
+      </div>
+      <div class="modal-body">
+        <input type='text' id='pictureUrl' ng-model='pictureUrl' class='form-control' placeholder='Change or Add photo Url: http://...'>
+      </div>
+      <div class="modal-footer">
+        <button id='closeButton' type="button" class="btn" data-dismiss="modal" ng-click='deletePicture()'>{{photoCloseButton}}</button>
+        <button type="button" class="btn btn-primary" ng-click='savePicture()' data-dismiss='modal'>Save Photo</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

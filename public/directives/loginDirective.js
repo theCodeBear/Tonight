@@ -17,6 +17,7 @@ angular.module('tonight')
             $state.go('register');
           } else {  // if user is in database: log them in, send them to dashboard
             $rootScope.user = data.data.user;
+            delete scope.login;
             $state.go('dashboard.feed');
           }
         });

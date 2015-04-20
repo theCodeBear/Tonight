@@ -10,7 +10,9 @@ var userSchema = mongoose.Schema({
   password: { type: String, required: true },
   dateStory: { type: mongoose.Schema.ObjectId, ref: 'Date' },
   bio: { type: String, required: true },
-  picture: { type: String, required: true },
+  pictureLeft: { type: String },
+  pictureCenter: { type: String, required: true },
+  pictureRight: { type: String },
   interests: { type: [String], required: true },
   phone: { type: String, required: true }
 });
@@ -35,6 +37,19 @@ userSchema.statics.login = function(payload, cb) {
     var isGood = bcrypt.compareSync(payload.password, user.password);
     if (!isGood) { return cb(true); }
     cb(null, user);
+  });
+};
+
+userSchema.statics.update = function(payload, cb) {
+  console.log('in server model update method', payload);
+  User.findByIdAndUpdate(payload.id, payload.payload, function(err, user) {
+    if (err) {
+      cb(true);
+    } else {
+      console.log('updated correctly');
+      cb(null, user);
+    }
+
   });
 };
 

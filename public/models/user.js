@@ -1,6 +1,6 @@
 angular.module('tonight')
 
-.factory('User', ['$http', function($http) {
+.factory('User', ['$http', '$rootScope', function($http, $rootScope) {
 
   function create(user) {
     return $http.post('/users', user);
@@ -10,6 +10,10 @@ angular.module('tonight')
     return $http.post('/login', user);
   }
 
-  return { create: create, login: login };
+  function update(user) {
+    return $http.post('/users/'+ $rootScope.user._id, user);
+  }
+
+  return { create: create, login: login, update: update };
 
 }]);
