@@ -42,6 +42,9 @@ userSchema.statics.login = function(payload, cb) {
 
 userSchema.statics.update = function(payload, cb) {
   console.log('in server model update method', payload);
+  if (payload.payload.password) {
+    payload.payload.password = bcrypt.hashSync(payload.payload.password, 8);
+  }
   User.findByIdAndUpdate(payload.id, payload.payload, function(err, user) {
     if (err) {
       cb(true);

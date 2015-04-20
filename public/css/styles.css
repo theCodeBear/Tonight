@@ -7,14 +7,14 @@ body * {
   /*border: 1px solid red;*/
 }
 
-form[name='registration'] {
+form[name='registration'], form[name='accountForm'] {
   background-color: rgba(200,200,200,0.9);
   border-radius: 5px;
   padding: 5em;
   margin-top: 3em;
 }
 
-form[name='registration'] .form-control {
+form[name='registration'] .form-control, form[name='accountForm'] .form-control {
   margin-top: 1em;
   padding: 1em;
 }
@@ -164,3 +164,26 @@ img.profilePic:hover {
   top: 50px;
 }
 /*  end of home.html */
+
+/* faq.html */
+summary {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  outline: none;
+}
+/* end of faq.html */
+
+/* account.html */
+form[name='accountForm'] {
+  color: black;
+}
+
+form[name='accountForm'].ng-dirty {
+  background-color: orange;
+}
+
+form[name='accountForm'].ng-invalid {
+  background-color: red;
+}
+/* end of account.html */
